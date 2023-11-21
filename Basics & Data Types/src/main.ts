@@ -12,3 +12,6 @@ console.log(a / b)
 console.log(c * b)
 
 // Data Types
+
+// number
+let x: number = 7;
