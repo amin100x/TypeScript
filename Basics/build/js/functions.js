@@ -34,3 +34,50 @@ const names = ["Alice", "Bob", "Eve"];
 names.forEach((s) => {
     console.log(s.toUpperCase());
 });
+// add
+const add = (x, y) => {
+    return x + y;
+};
+const sub = (a, b) => {
+    return a - b;
+};
+const mult = (a, b) => {
+    return a * b;
+};
+const div = (a, b) => {
+    return a / b;
+};
+// Optional parameters
+const addAll = (a, b, c) => {
+    if (typeof c !== 'undefined') {
+        return a + b + c;
+    }
+    return a + b;
+};
+// Default paramter 
+const sumAll = (a = 10, b, c = 2) => {
+    return a + b + c;
+};
+console.log(sumAll(2, 5)); // 9
+console.log(sumAll(undefined, 5)); // 17
+// Rest Parameter :- accept any number of parameters
+const total = (...nums) => {
+    return nums.reduce((a, b) => a + b);
+};
+console.log(total(1, 2, 3, 4, 5));
+console.log(total(1, 2, 3, 4, 5, 45, 6, 7, 8, 9));
+// never return type :- when function return error
+const Err = (errmsg) => {
+    throw new Error(errmsg);
+};
+// automatically type of this function become never
+const infinate = () => {
+    let i = 1;
+    while (true) {
+        i++;
+    }
+};
+// custome type guard
+const isNum = (a) => {
+    return typeof a === 'number' ? true : false;
+};

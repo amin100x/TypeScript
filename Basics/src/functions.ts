@@ -26,3 +26,61 @@ const names = ["Alice", "Bob", "Eve"];
 names.forEach((s) => {
     console.log(s.toUpperCase());
 });
+
+// add
+const add = (x: number, y: number): number => {
+    return x + y;
+}
+
+// we can also define type for the same parameters like all opration have same 2 parametre
+type mathFun = (a: number, b: number) => number
+// ================== OR ========================= both works same here
+interface mathFun1 {
+    (a: number, b: number): number
+}
+
+const sub: mathFun = (a, b) => {
+    return a - b
+}
+const mult: mathFun = (a, b) => {
+    return a * b
+}
+const div: mathFun = (a, b) => {
+    return a / b
+}
+
+// Optional parameters
+const addAll = (a: number, b: number, c?: number): number => {
+    if (typeof c !== 'undefined') { return a + b + c }
+    return a + b;
+}
+// Default paramter 
+const sumAll = (a: number = 10, b: number, c: number = 2): number => {
+    return a + b + c;
+}
+console.log(sumAll(2, 5)); // 9
+console.log(sumAll(undefined, 5));  // 17
+
+// Rest Parameter :- accept any number of parameters
+const total = (...nums: number[]) => {
+    return nums.reduce((a, b) => a + b);
+}
+console.log(total(1, 2, 3, 4, 5));
+console.log(total(1, 2, 3, 4, 5, 45, 6, 7, 8, 9));
+
+// never return type :- when function return error
+const Err = (errmsg: string): never => {
+    throw new Error(errmsg)
+}
+// automatically type of this function become never
+const infinate = () => {
+    let i = 1;
+    while (true) {
+        i++;
+    }
+}
+
+// custome type guard
+const isNum = (a: any): boolean => {
+    return typeof a === 'number' ? true : false
+}
