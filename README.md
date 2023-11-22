@@ -18,3 +18,9 @@ this command will detact the every changes in ts file and compile ts code to js
 ```bash
   tsc main.ts -w 
 ```
+
+## TS config file
+
+```bash
+  tsc --init
+```
