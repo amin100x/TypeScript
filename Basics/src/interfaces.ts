@@ -15,11 +15,25 @@ type Cricketer = {
     Number?: number,  // here ? is writtejn for define this property Optional 
     Finisher: boolean | number
 }
-// ----------------- OR ---------------- // 
+// ----------------- OR ---------------- // Interfaces
+// interfaces can be implemented by class but type can't
+// interfaces can let you accumulate data of specific type
+// interfaces can use other interfaces 
+// interfaces can extends interfaces 
 interface Cricketer1 {
     name: string,
     Number?: number,  // here ? is written for define this property Optional 
     Finisher: boolean | number
+}
+class Msd implements Cricketer1 {
+    name: string;
+    Number: number;
+    Finisher: boolean | number;
+    constructor(name: string, Number: number, Finisher: boolean | number) {
+        this.name = name,
+            this.Number = Number,
+            this.Finisher = Finisher
+    }
 }
 
 // Actual create function
