@@ -16,10 +16,15 @@ type Cricketer = {
     Finisher: boolean | number
 }
 // ----------------- OR ---------------- // Interfaces
+
+// -------------------- Interface vs types ---------------------
 // interfaces can be implemented by class but type can't
 // interfaces can let you accumulate data of specific type
 // interfaces can use other interfaces 
 // interfaces can extends interfaces 
+// types can do unions and intersections interface can't
+
+
 interface Cricketer1 {
     name: string,
     Number?: number,  // here ? is written for define this property Optional 
