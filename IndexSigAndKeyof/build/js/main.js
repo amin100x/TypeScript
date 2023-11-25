@@ -20,3 +20,18 @@ const todaysNet = (transactions) => {
 console.log(todaysNet(todaysTransactions));
 todaysTransactions.Pizza = 40;
 console.log(todaysTransactions['Dave']); // undefined
+const student = {
+    name: "MsD",
+    GPA: 9.5,
+    classes: [100, 200]
+};
+for (const key in student) {
+    console.log(`${key}: ${student[key]}`);
+}
+Object.keys(student).map(key => {
+    console.log(student[key]);
+});
+const logStudentKey = (student, key) => {
+    console.log(`Student ${key}: ${student[key]}`);
+};
+logStudentKey(student, 'name');

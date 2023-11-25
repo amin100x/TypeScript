@@ -35,3 +35,30 @@ console.log(todaysNet(todaysTransactions))
 
 todaysTransactions.Pizza = 40
 console.log(todaysTransactions['Dave']) // undefined
+
+
+// --------------------------- keyof ------------------------------------
+
+interface Student {
+    name: string,
+    GPA: number,
+    classes?: number[]
+}
+
+const student: Student = {
+    name: "MsD",
+    GPA: 9.5,
+    classes: [100, 200]
+}
+
+for (const key in student) {
+    console.log(`${key}: ${student[key as keyof Student]}`)
+}
+Object.keys(student).map(key => {
+    console.log(student[key as keyof typeof student])
+})
+
+const logStudentKey = (student: Student, key: keyof Student): void => {
+    console.log(`Student ${key}: ${student[key]}`)
+}
+logStudentKey(student, 'name')
