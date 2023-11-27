@@ -91,17 +91,21 @@ const preview: AssignPreview = {
 }
 
 // ------------------------------------------ Exclude and Extract ---------------------------------------
+// Exclude :- Constructs a type by excluding from UnionType
+// Extract :- opp. of Exclude, Constructs a type by extracting from Type
 
-type adjustedGrade = Exclude<LetterGrades, "U">
+type adjustedGrade = Exclude<LetterGrades, "U"> // A,B,C,D 
 
-type highGrades = Extract<LetterGrades, "A" | "B">
+type highGrades = Extract<LetterGrades, "A" | "B"> // only A,B
 
-// Nonnullable 
+// ------------------------------------------------ Nonnullable ------------------------------------------
+// Constructs a type by excluding null and undefined from Type.
 
 type AllPossibleGrades = 'Dave' | 'John' | null | undefined
 type NamesOnly = NonNullable<AllPossibleGrades>
 
-// ReturnType 
+// ----------------------------------------------- ReturnType ---------------------------------------------
+// Constructs a type consisting of the return type of function Type.
 
 //type newAssign = { title: string, points: number }
 
@@ -114,7 +118,8 @@ type NewAssign = ReturnType<typeof createNewAssign>
 const tsAssign: NewAssign = createNewAssign("Utility Types", 100)
 console.log(tsAssign)
 
-// Parameters 
+// ------------------------------------------------- Parameters ---------------------------------------------
+// Constructs a tuple type from the types used in the parameters of a function type Type.
 
 type AssignParams = Parameters<typeof createNewAssign>
 
@@ -123,7 +128,8 @@ const assignArgs: AssignParams = ["Generics", 100]
 const tsAssign2: NewAssign = createNewAssign(...assignArgs)
 console.log(tsAssign2)
 
-// Awaited - helps us with the ReturnType of a Promise 
+// ------------------------------------------ Awaited ------------------------------------------------------
+//  helps us with the ReturnType of a Promise 
 
 interface User {
     id: number,

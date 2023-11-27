@@ -57,7 +57,8 @@ const preview = {
     studentId: "k123",
     title: "Final Project",
 };
-// ReturnType 
+// ----------------------------------------------- ReturnType ---------------------------------------------
+// Constructs a type consisting of the return type of function Type.
 //type newAssign = { title: string, points: number }
 const createNewAssign = (title, points) => {
     return { title, points };
