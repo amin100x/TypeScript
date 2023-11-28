@@ -129,7 +129,7 @@ const tsAssign2: NewAssign = createNewAssign(...assignArgs)
 console.log(tsAssign2)
 
 // ------------------------------------------ Awaited ------------------------------------------------------
-//  helps us with the ReturnType of a Promise 
+// w helps us with the ReturnType of a Promise 
 
 interface User {
     id: number,
