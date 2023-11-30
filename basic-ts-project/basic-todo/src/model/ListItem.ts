@@ -1,3 +1,4 @@
+import css from '../css/style.css'
 export interface Item {
     id: string,
     item: string,
