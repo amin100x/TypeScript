@@ -24,3 +24,10 @@ this command will detact the every changes in ts file and compile ts code to js
 ```bash
   tsc --init
 ```
+
+## Vite with TS
+
+```bash
+  npm create vite@latest
+```
+then type a Project name and select Framework
