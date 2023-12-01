@@ -10,16 +10,16 @@ export default class ListTemplate implements DOMlist {
 
     ul: HTMLUListElement
     static instance: ListTemplate = new ListTemplate()
-    
+
     private constructor() {
-        this.ul = document.getElementById("ListItems") as HTMLUListElement
+        this.ul = document.getElementById("listItems") as HTMLUListElement
     }
     clear(): void {
-        this.ul.innerHTML = ''
+        this.ul.innerHTML = ' '
     }
     render(fullList: FullList): void {
         this.clear()
-        fullList.array.forEach(item => {
+        fullList.list.forEach(item => {
             const li = document.createElement('li') as HTMLLIElement
             li.className = 'item'
 

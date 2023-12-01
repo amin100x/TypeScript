@@ -12,7 +12,6 @@ interface List {
 export default class FullList implements List {
 
     static instance: FullList = new FullList(); // static because we have only one list in the applicatation 
-    array: any;
 
     private constructor(private _list: ListItem[] = []) { }
 
