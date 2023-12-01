@@ -9,7 +9,8 @@ interface DOMlist {
 export default class ListTemplate implements DOMlist {
 
     ul: HTMLUListElement
-
+    static instance: ListTemplate = new ListTemplate()
+    
     private constructor() {
         this.ul = document.getElementById("ListItems") as HTMLUListElement
     }
@@ -18,7 +19,6 @@ export default class ListTemplate implements DOMlist {
     }
     render(fullList: FullList): void {
         this.clear()
-
         fullList.array.forEach(item => {
             const li = document.createElement('li') as HTMLLIElement
             li.className = 'item'
