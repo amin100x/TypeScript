@@ -13,7 +13,7 @@ export default class FullList implements List {
 
     static instance: FullList = new FullList(); // static because we have only one list in the applicatation 
 
-    constructor(private _list: ListItem[] = []) { }
+    private constructor(private _list: ListItem[] = []) { }
 
     get list(): ListItem[] {
         return this._list
