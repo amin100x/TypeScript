@@ -5,7 +5,7 @@ const Counter = () => {
     const [counter1, setCounter1] = useState(0) // automatic number
   return (
     <div>
-      Count :- {counter}
+      <h1>Count :- {counter}</h1>
       <button onClick={()=> setCounter(prev => prev+1)}>+</button>
       <button onClick={()=> setCounter(prev => prev-1)}>-</button>
     </div>
