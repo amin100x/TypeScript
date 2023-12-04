@@ -1,10 +1,20 @@
-import { useCallback, useEffect, useState, MouseEvent, KeyboardEvent } from 'react'
+import { useCallback, useEffect, useState, MouseEvent, KeyboardEvent, useMemo } from 'react'
 import './App.css'
 
 interface User {
   name: string
   id: number
 }
+
+type fibFunc = (n: number) => number
+
+const fib: fibFunc = (n) => {
+  if (n < 2) return n
+  return fib(n - 1) + fib(n - 2)
+}
+
+const myNum: number = 37
+
 function App() {
 
   // useState
@@ -19,7 +29,9 @@ function App() {
   // useCallback :- useCallBack is use to make function only once, otherwise here new function will create everytime when we click button
   let add = useCallback((e: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>) => setCount(p => p + 1), []); // we can also give specific type of parameter
 
-  
+  const result = useMemo<number>(() => fib(myNum), [myNum])
+
+
   return (
     <>
       {count}
